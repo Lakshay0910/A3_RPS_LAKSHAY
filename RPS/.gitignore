@@ -1,0 +1,32 @@
+# Visual Studio cache
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+[Bb]in/
+[Oo]bj/
+Debug/
+Release/
+x64/
+x86/
+ipch/
+*.obj
+*.pdb
+*.idb
+*.opendb
+*.VC.db
+*.aps
+*.ncb
+
+# Test artifacts
+TestResults/
+*.trx
+
+# CMake / generic build dirs
+CMakeFiles/
+CMakeCache.txt
+out/
+build/
