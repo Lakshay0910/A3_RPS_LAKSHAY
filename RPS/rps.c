@@ -1,6 +1,7 @@
 #include <string.h>
 #include "rps.h"
 
+// Refactor step: cleaned code, no logic changed (BLUE phase)
 static int is_equal(const char* a, const char* b) { return strcmp(a, b) == 0; }
 
 const char* rps_winner(const char* p1, const char* p2) {
