@@ -2,7 +2,7 @@
 #include "CppUnitTest.h"
 
 extern "C" {
-#include "../RPS/rps.h"   // <-- keep this path
+#include "../RPS/rps.h"   // adjust if your project name/path differs
 }
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -23,6 +23,12 @@ namespace RPStests
         {
             const char* result = rps_winner("Paper", "Paper");
             Assert::AreEqual("Draw", result);
+        }
+
+        TEST_METHOD(Red_Player2BeatsRock)
+        {
+            const char* result = rps_winner("Rock", "Paper");
+            Assert::AreEqual("Player2", result);
         }
     };
 }
