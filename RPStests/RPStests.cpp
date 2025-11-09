@@ -30,5 +30,14 @@ namespace RPStests
             const char* result = rps_winner("Rock", "Paper");
             Assert::AreEqual("Player2", result);
         }
+        TEST_METHOD(Red_Invalid_Lowercase) {
+            Assert::AreEqual("Invalid", rps_winner("rock", "Paper"));
+        }
+
+        TEST_METHOD(Red_Invalid_NullOrGarbage) {
+            Assert::AreEqual("Invalid", rps_winner(nullptr, "Rock"));
+            Assert::AreEqual("Invalid", rps_winner("Lizard", "Spock"));
+        }
     };
 }
+
