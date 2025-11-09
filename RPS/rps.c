@@ -1,11 +1,15 @@
 #include <string.h>
 #include "rps.h"
 
-// Refactor step: cleaned code, no logic changed (BLUE phase)
+// TDD Blue phase: minor tidy for readability, behavior unchanged
 static int is_equal(const char* a, const char* b) { return strcmp(a, b) == 0; }
 
+static int is_valid(const char* s) {
+    return s && (is_equal(s, "Rock") || is_equal(s, "Paper") || is_equal(s, "Scissors"));
+}
+
 const char* rps_winner(const char* p1, const char* p2) {
-    if (!p1 || !p2) return "Invalid";
+    if (!is_valid(p1) || !is_valid(p2)) return "Invalid";
     if (is_equal(p1, p2)) return "Draw";
 
     int p1_wins =
@@ -15,3 +19,4 @@ const char* rps_winner(const char* p1, const char* p2) {
 
     return p1_wins ? "Player1" : "Player2";
 }
+
