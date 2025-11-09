@@ -1,5 +1,8 @@
+#include <string.h>
 #include "rps.h"
 
 const char* rps_winner(const char* p1, const char* p2) {
-    return "Invalid"; // stub due to TDD - we make it pass later
+    if (!p1 || !p2) return "Invalid";
+    if (strcmp(p1, "Rock") == 0 && strcmp(p2, "Scissors") == 0) return "Player1";
+    return "Invalid"; // still minimal, just enough to pass the first test
 }
